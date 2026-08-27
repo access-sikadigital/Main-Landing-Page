@@ -85,7 +85,6 @@ export const Route = createFileRoute("/house-demolition")({
   component: LandingPage,
 });
 
-
 /**
  * Paid-traffic landing page for Campaign 1 (Full Home Demolition), built to the
  * deck's section order, top to bottom.
