@@ -99,6 +99,7 @@ function LandingPage() {
       <HubHero />
       <ServiceShowcase />
       <Audiences />
+      <Reviews />
       <FinalCta />
       <GoogleRatingSticky />
       <FloatingContact />

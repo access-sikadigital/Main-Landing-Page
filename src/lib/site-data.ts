@@ -57,7 +57,7 @@ export const hero = {
  * Four claims, no more — it is a glance, not a read.
  */
 export const greenStripClaims = [
-  "4.9 ★ from 54 Google reviews",
+  "4.9 ★ from 56 Google reviews",
   "Family owned since 2013",
   "$20M public liability",
   "VBA registered",
@@ -116,7 +116,7 @@ export interface HeroStat {
  */
 export const heroStats: HeroStat[] = [
   { id: "rating", value: "4.9", label: "Google rating" },
-  { id: "reviews", value: "54", label: "Google reviews" },
+  { id: "reviews", value: "56", label: "Google reviews" },
   { id: "since", value: "2013", label: "Family owned since" },
   { id: "turnaround", value: "24h", label: "Price in writing" },
 ];
@@ -448,24 +448,73 @@ export const guaranteeHeading = {
  */
 export const testimonials = [
   {
-    name: "Jessie Shepherd",
-    role: "Strip out, inner west",
+    name: "Toko T",
+    role: "Half house demolition, Brighton",
     quote:
-      "Thanks to Tony and his team at Demo Bros for their strip out of an old property we have. From start to finish the team were professional, communicative and respectful of my property. Completed on time and within my budget.",
+      "We recently had a half house demolition completed in Brighton — the team at Demo Bros did an absolutely fantastic job. The workmanship was outstanding and we're ecstatic with the results. Everything was handled professionally and safely.",
     rating: 5,
   },
   {
-    name: "George Toubia",
-    role: "Shed demolition",
+    name: "Tom Peyton",
+    role: "Residential demolition",
     quote:
-      "The team were professional, efficient and took all necessary safety precautions to ensure the job was done safely. They also left the site clean and tidy, which was much appreciated.",
+      "Demo Bros were great to deal with for our recent demolition. They were very responsive and easy to communicate with. Our permit and demolition were organised promptly and they did a great job. Highly recommended!",
     rating: 5,
   },
   {
-    name: "Tony Manara",
-    role: "Commercial demolition",
+    name: "Cale Dudderidge",
+    role: "Commercial project, city",
     quote:
-      "They exceeded all our expectations. Knowledgeable, experienced and had all the necessary equipment to complete the job quickly and efficiently. They took the time to explain the entire process.",
+      "Demo Bros did a great job on our commercial project in the city. With a tight program and access challenges, Henry and the team smashed it within the time frame, leaving the job tidy and ready for the next trade.",
+    rating: 5,
+  },
+  {
+    name: "John Biffaro",
+    role: "Demolition",
+    quote:
+      "Nothing but praise for the boys at Demo Bros. Henry was responsive, prompt and true to his word from the start. Isabel was great on the admin side, and Don did the job in the required time — quick and clean. Could not be happier.",
+    rating: 5,
+  },
+  {
+    name: "Drew Tuulakitau",
+    role: "Backyard clean-up & levelling",
+    quote:
+      "Demo Bros did an amazing job with our backyard clean-up and soil levelling. Super professional, on time and easy to deal with. The price was very reasonable and the site was left spotless and perfectly levelled for the next stage. Highly recommend!",
+    rating: 5,
+  },
+  {
+    name: "Sharleen Kiely",
+    role: "Brick wall & fence demolition",
+    quote:
+      "I hired Demo Bros to demolish a brick wall and fence attached to my house and I couldn't be happier with the result. The team was extremely professional, efficient and helpful from start to finish.",
+    rating: 5,
+  },
+  {
+    name: "Michael Tsalkos",
+    role: "Garage demolition",
+    quote:
+      "Demo Bros did a great job demolishing the rear garage in a safe and timely manner, delivering on time. Would highly recommend the team for any job, large or small.",
+    rating: 5,
+  },
+  {
+    name: "Carmen Teoh Jia Wen",
+    role: "Site clean-up, Kew",
+    quote:
+      "The boys did a great job on our project at Kew. They tidied up our site and even helped remove an extra tree trunk at the back. Really happy with them.",
+    rating: 5,
+  },
+  {
+    name: "Kristin W",
+    role: "Project, Melbourne",
+    quote:
+      "I recently used Demo Bros for a project in Melbourne. The full team — from ops to planning to delivery — were great, and I'd recommend them moving forward.",
+    rating: 5,
+  },
+  {
+    name: "Eli Dzagba",
+    role: "Melbourne",
+    quote:
+      "Our car broke down at the highway entrance and one of the Demo Bros crew pulled up out of nowhere, big smile, and didn't even hesitate. Helped us push it off the road and towed us all the way home. Top blokes.",
     rating: 5,
   },
 ];

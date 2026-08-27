@@ -40,7 +40,7 @@ import { FaqList, faqJsonLd } from "@/services/strip-out/components/site/FaqList
 import { CtaButton } from "@/services/strip-out/components/site/CtaButton";
 import { QuoteForm } from "@/services/strip-out/components/site/QuoteForm";
 import { MiraVideo } from "@/services/strip-out/components/site/MiraVideo";
-import { useQuoteModal } from "@/services/strip-out/components/site/QuoteModal";
+import { QuoteModalProvider, useQuoteModal } from "@/services/strip-out/components/site/QuoteModal";
 import { FloatingContact } from "@/services/strip-out/components/site/FloatingContact";
 import { StickyQuoteBar } from "@/services/strip-out/components/site/StickyQuoteBar";
 import {
@@ -95,7 +95,7 @@ export const Route = createFileRoute("/strip-out")({
  */
 function LandingPage() {
   return (
-    <>
+    <QuoteModalProvider>
       <Hero />
       <TrustStrip />
       <TrustStats />
@@ -128,7 +128,7 @@ function LandingPage() {
       <GoogleRatingSticky />
       <FloatingContact />
       <StickyQuoteBar />
-    </>
+    </QuoteModalProvider>
   );
 }
 

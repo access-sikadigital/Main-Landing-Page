@@ -38,7 +38,7 @@ import { SectionHeading } from "@/services/house-demolition/components/site/Sect
 import { FaqList, faqJsonLd } from "@/services/house-demolition/components/site/FaqList";
 import { CtaButton } from "@/services/house-demolition/components/site/CtaButton";
 import { QuoteForm } from "@/services/house-demolition/components/site/QuoteForm";
-import { useQuoteModal } from "@/services/house-demolition/components/site/QuoteModal";
+import { QuoteModalProvider, useQuoteModal } from "@/services/house-demolition/components/site/QuoteModal";
 import { FloatingContact } from "@/services/house-demolition/components/site/FloatingContact";
 import { StickyMobileBar } from "@/services/house-demolition/components/site/StickyMobileBar";
 import {
@@ -107,7 +107,7 @@ export const Route = createFileRoute("/house-demolition")({
  */
 function LandingPage() {
   return (
-    <>
+    <QuoteModalProvider>
       <Hero />
       <TrustStrip />
       <TrustStats />
@@ -128,7 +128,7 @@ function LandingPage() {
       <GoogleRatingSticky />
       <FloatingContact />
       <StickyMobileBar />
-    </>
+    </QuoteModalProvider>
   );
 }
 

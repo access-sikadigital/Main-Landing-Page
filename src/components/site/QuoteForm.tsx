@@ -34,7 +34,7 @@ const TONE = {
     label: "mb-1 block text-[0.8rem] font-semibold text-primary-foreground sm:mb-1.5 sm:text-sm",
     hint: "text-primary-foreground/80",
     muted: "text-primary-foreground/65",
-    error: "text-white",
+    error: "text-red-300 font-semibold",
     dropzone: "border-dashed border-white/40 bg-white text-charcoal hover:border-white",
     panel: "border-white/20 bg-white text-charcoal",
     option: "text-charcoal hover:bg-black/[0.04]",

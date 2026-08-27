@@ -19,6 +19,12 @@ import { captureTracking } from "@/lib/tracking";
 
 // Copy deck v8, section 16. The prices quoted here are two of the eight places
 // they appear (build note 10) — change them in PRICING and they change here too.
+// Public URL of the site — used to build absolute URLs for social share images
+// (Open Graph / Twitter require absolute URLs, not relative paths). Update this
+// if the production domain changes.
+const SITE_URL = "https://go.demobros.com.au";
+const OG_IMAGE = `${SITE_URL}/og-image.jpg`;
+
 const TITLE = `Demo Bros | Melbourne Demolitions & Strip Outs from ${PRICING.kitchen}`;
 const DESCRIPTION = `Melbourne strip out specialists. Kitchens from ${PRICING.kitchen}, bathrooms from ${PRICING.bathroom}, cleared in a day. Itemised price in writing within 24 hours, and it doesn't move. 4.9★ from 54 Melbourne jobs.`;
 
@@ -87,14 +93,30 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Demo Bros" },
+      { property: "og:url", content: SITE_URL },
+      // The share image (1200×630) that appears when the link is posted to
+      // Facebook, WhatsApp, LinkedIn, iMessage, Slack, etc.
+      { property: "og:image", content: OG_IMAGE },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      {
+        property: "og:image:alt",
+        content: "Demo Bros — House Demolition, Rubbish Removal & Strip-Outs, Melbourne",
+      },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      // The Demo Bros logomark, run through SVGO (320 KB → 108 KB). Replaces the
-      // default favicon the starter shipped with.
+      // Favicons. SVG for modern browsers, PNG/ICO fallbacks for older ones and
+      // for tab/bookmark/home-screen icons across devices.
       { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
-      { rel: "apple-touch-icon", href: "/favicon.svg" },
+      { rel: "icon", href: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+      { rel: "icon", href: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
+      { rel: "icon", href: "/favicon.ico", sizes: "any" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png", sizes: "180x180" },
     ],
     scripts: [
       {

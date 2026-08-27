@@ -34,7 +34,7 @@ import { SectionHeading } from "@/services/rubbish-removal/components/site/Secti
 import { FaqList, faqJsonLd } from "@/services/rubbish-removal/components/site/FaqList";
 import { CtaButton } from "@/services/rubbish-removal/components/site/CtaButton";
 import { QuoteForm } from "@/services/rubbish-removal/components/site/QuoteForm";
-import { useQuoteModal } from "@/services/rubbish-removal/components/site/QuoteModal";
+import { QuoteModalProvider, useQuoteModal } from "@/services/rubbish-removal/components/site/QuoteModal";
 import { FloatingContact } from "@/services/rubbish-removal/components/site/FloatingContact";
 import { StickyMobileBar } from "@/services/rubbish-removal/components/site/StickyMobileBar";
 import {
@@ -91,7 +91,7 @@ export const Route = createFileRoute("/rubbish-removal")({
  */
 function LandingPage() {
   return (
-    <>
+    <QuoteModalProvider>
       <Hero />
       <TrustStrip />
       <TrustStats />
@@ -111,7 +111,7 @@ function LandingPage() {
       <GoogleRatingSticky />
       <FloatingContact />
       <StickyMobileBar />
-    </>
+    </QuoteModalProvider>
   );
 }
 
