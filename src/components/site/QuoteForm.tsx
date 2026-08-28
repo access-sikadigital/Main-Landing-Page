@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { motion, AnimatePresence } from "framer-motion";
 import { CtaButton } from "./CtaButton";
 import { MultiSelect } from "./MultiSelect";
-import { SITE, CTA_LABEL, quoteForm, quoteServiceOptions, timingOptions } from "@/lib/site-data";
+import { SITE, CTA_LABEL, quoteForm, quoteServiceOptions } from "@/lib/site-data";
 import { quoteSchema, type QuoteValues } from "@/lib/quote-schema";
 import { submitLead } from "@/lib/lead.functions";
 import { captureTracking, getTracking } from "@/lib/tracking";
@@ -303,25 +303,6 @@ export function QuoteForm({
                 <p id="q-services-error" className={`mt-1.5 text-sm ${t.error}`}>
                   {errors.services.message}
                 </p>
-              )}
-            </div>
-
-            <div className={WIDE}>
-              <label htmlFor="q-timing" className={labelClass}>
-                When are you looking to start?
-              </label>
-              <select id="q-timing" className={inputClass} {...register("timing")}>
-                <option value="" disabled>
-                  Select…
-                </option>
-                {timingOptions.map((o) => (
-                  <option key={o.value} value={o.value}>
-                    {o.label}
-                  </option>
-                ))}
-              </select>
-              {errors.timing && (
-                <p className={`mt-1.5 text-sm ${t.error}`}>{errors.timing.message}</p>
               )}
             </div>
 

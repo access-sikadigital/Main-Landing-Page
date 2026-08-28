@@ -50,7 +50,7 @@ export const quoteSchema = z.object({
    * through a field controller that hands back the full selection on every
    * change, so there is no "one value or many" ambiguity to normalise here.
    */
-  services: z.array(z.string()).min(1, "Please choose what needs clearing").max(20),
+  services: z.array(z.string()).min(1, "Please choose what needs to come out").max(20),
   /*
    * There is no `amount`, `timing` or photo field. All three were required or
    * near-required answers standing between the visitor and a submitted lead —

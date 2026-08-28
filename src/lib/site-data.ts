@@ -80,15 +80,11 @@ export const quoteForm = {
  * first. `value` is what travels to GoHighLevel.
  */
 export const quoteServiceOptions = [
-  { value: "kitchen-strip-out", label: "Kitchen strip out" },
-  { value: "bathroom-strip-out", label: "Bathroom strip out" },
-  { value: "laundry-strip-out", label: "Laundry strip out" },
-  { value: "internal-demolition", label: "Internal demolition" },
-  { value: "partial-demolition", label: "Partial demolition" },
-  { value: "wall-tile-asbestos-removal", label: "Wall, tile or asbestos removal" },
-  { value: "shed-deck-site-clearance", label: "Shed, deck or site clearance" },
-  { value: "full-house-demolition", label: "Full house demolition" },
-  { value: "something-else", label: "Something else" },
+  { value: "strip-out", label: "Strip Out" },
+  { value: "partial-demolition", label: "Partial Demolition" },
+  { value: "full-home-demolition", label: "Full Home Demolition" },
+  { value: "rubbish-removal", label: "Rubbish Removal" },
+  { value: "other", label: "Other" },
 ];
 
 /** "When are you looking to start?" — tells the crew how to sequence the job. */

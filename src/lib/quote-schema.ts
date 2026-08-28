@@ -52,7 +52,7 @@ export const quoteSchema = z.object({
    * change, so there is no "one value or many" ambiguity to normalise here.
    */
   services: z.array(z.string()).min(1, "Please choose what needs to come out").max(20),
-  timing: z.string().nonempty("Please choose when you are looking to start"),
+  timing: z.string().optional().default(""),
   comments: z.string().trim().max(2000).optional(),
 });
 

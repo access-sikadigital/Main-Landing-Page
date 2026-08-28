@@ -193,7 +193,7 @@ function QuoteModal({ open, onClose }: { open: boolean; onClose: () => void }) {
                     version, and every extra field costs completions. The hero
                     form carries the full deck version. */}
                 <div className="mt-6">
-                  <QuoteForm compact tone="onGreen" comments={false} />
+                  <QuoteForm compact tone="onGreen" photos={false} />
                 </div>
               </div>
             </motion.div>

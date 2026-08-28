@@ -89,27 +89,11 @@ export const quoteForm = {
  * `value` is what travels to GoHighLevel.
  */
 export const quoteServiceOptions = [
-  { value: "general-household-rubbish", label: "General household rubbish" },
-  { value: "hard-rubbish", label: "Hard rubbish — furniture, whitegoods, mattresses" },
-  { value: "garage-shed-storage-clearout", label: "Garage, shed or storage clear-out" },
-  { value: "whole-house-clearout", label: "Whole house clear-out" },
-  { value: "deceased-estate", label: "Deceased estate" },
-  { value: "hoarding-cleanup", label: "Hoarding cleanup" },
-  {
-    value: "yard-garden-green-waste",
-    label: "Yard or garden — overgrown, green waste, old decking",
-  },
-  { value: "concrete-brick-tiles-rubble", label: "Concrete, brick, tiles or rubble" },
-  {
-    value: "deck-shed-carport-pergola",
-    label: "Deck, shed, carport or pergola to be taken apart and removed",
-  },
-  {
-    value: "construction-demolition-waste",
-    label: "Construction or demolition waste — building site",
-  },
-  { value: "office-commercial-clearout", label: "Office or commercial clear-out" },
-  { value: "something-else", label: "Something else" },
+  { value: "strip-out", label: "Strip Out" },
+  { value: "partial-demolition", label: "Partial Demolition" },
+  { value: "full-home-demolition", label: "Full Home Demolition" },
+  { value: "rubbish-removal", label: "Rubbish Removal" },
+  { value: "other", label: "Other" },
 ];
 
 /*

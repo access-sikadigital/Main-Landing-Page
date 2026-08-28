@@ -288,7 +288,7 @@ export function QuoteForm({
                 usable here. */}
             <div className={WIDE}>
               <label htmlFor="q-services" className={labelClass}>
-                What needs clearing?{" "}
+                What needs to come out?{" "}
                 <span className={`font-normal ${t.muted}`}>(select all that apply)</span>
               </label>
               <MultiSelect

@@ -648,7 +648,7 @@ function Hero() {
             {quoteForm.lede}
           </p>
           <div className="mt-4 sm:mt-5">
-            <QuoteForm compact />
+            <QuoteForm compact photos={false} />
           </div>
         </motion.div>
       </div>

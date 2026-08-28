@@ -304,7 +304,7 @@ function Hero() {
           <h2 className="font-heading text-xl text-light-foreground">{quoteForm.title}</h2>
           <p className="mt-1.5 text-sm text-light-foreground/70">{quoteForm.lede}</p>
           <div className="mt-5">
-            <QuoteForm compact />
+            <QuoteForm compact photos={false} />
           </div>
         </motion.div>
       </div>
