@@ -1,3 +1,4 @@
+import { useNavigate } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { useController, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -119,6 +120,8 @@ export function QuoteForm({
     return `Customer attached ${count} photo(s) but ${why}. Follow up for them.`;
   }
 
+  const navigate = useNavigate();
+
   const onSubmit = async (values: QuoteValues) => {
     setErrorMsg(null);
 
@@ -143,7 +146,7 @@ export function QuoteForm({
           tracking: getTracking(),
         },
       });
-      setSubmitted(true);
+      navigate({ to: "/thank-you" });
     } catch {
       setErrorMsg(
         `Something went wrong sending your request. Please try again, or call us on ${SITE.phone} and we'll sort it straight away.`,

@@ -13,6 +13,10 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as HouseDemolitionRouteImport } from './routes/house-demolition'
 import { Route as RubbishRemovalRouteImport } from './routes/rubbish-removal'
 import { Route as StripOutRouteImport } from './routes/strip-out'
+import { Route as ThankYouRouteImport } from './routes/thank-you'
+import { Route as ThankYouHouseDemolitionRouteImport } from './routes/thank-you-house-demolition'
+import { Route as ThankYouRubbishRemovalRouteImport } from './routes/thank-you-rubbish-removal'
+import { Route as ThankYouStripOutRouteImport } from './routes/thank-you-strip-out'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -34,18 +38,46 @@ const StripOutRoute = StripOutRouteImport.update({
   path: '/strip-out',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ThankYouRoute = ThankYouRouteImport.update({
+  id: '/thank-you',
+  path: '/thank-you',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ThankYouHouseDemolitionRoute = ThankYouHouseDemolitionRouteImport.update({
+  id: '/thank-you-house-demolition',
+  path: '/thank-you-house-demolition',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ThankYouRubbishRemovalRoute = ThankYouRubbishRemovalRouteImport.update({
+  id: '/thank-you-rubbish-removal',
+  path: '/thank-you-rubbish-removal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ThankYouStripOutRoute = ThankYouStripOutRouteImport.update({
+  id: '/thank-you-strip-out',
+  path: '/thank-you-strip-out',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/house-demolition': typeof HouseDemolitionRoute
   '/rubbish-removal': typeof RubbishRemovalRoute
   '/strip-out': typeof StripOutRoute
+  '/thank-you': typeof ThankYouRoute
+  '/thank-you-house-demolition': typeof ThankYouHouseDemolitionRoute
+  '/thank-you-rubbish-removal': typeof ThankYouRubbishRemovalRoute
+  '/thank-you-strip-out': typeof ThankYouStripOutRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/house-demolition': typeof HouseDemolitionRoute
   '/rubbish-removal': typeof RubbishRemovalRoute
   '/strip-out': typeof StripOutRoute
+  '/thank-you': typeof ThankYouRoute
+  '/thank-you-house-demolition': typeof ThankYouHouseDemolitionRoute
+  '/thank-you-rubbish-removal': typeof ThankYouRubbishRemovalRoute
+  '/thank-you-strip-out': typeof ThankYouStripOutRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,13 +85,42 @@ export interface FileRoutesById {
   '/house-demolition': typeof HouseDemolitionRoute
   '/rubbish-removal': typeof RubbishRemovalRoute
   '/strip-out': typeof StripOutRoute
+  '/thank-you': typeof ThankYouRoute
+  '/thank-you-house-demolition': typeof ThankYouHouseDemolitionRoute
+  '/thank-you-rubbish-removal': typeof ThankYouRubbishRemovalRoute
+  '/thank-you-strip-out': typeof ThankYouStripOutRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/house-demolition' | '/rubbish-removal' | '/strip-out'
+  fullPaths:
+    | '/'
+    | '/house-demolition'
+    | '/rubbish-removal'
+    | '/strip-out'
+    | '/thank-you'
+    | '/thank-you-house-demolition'
+    | '/thank-you-rubbish-removal'
+    | '/thank-you-strip-out'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/house-demolition' | '/rubbish-removal' | '/strip-out'
-  id: '__root__' | '/' | '/house-demolition' | '/rubbish-removal' | '/strip-out'
+  to:
+    | '/'
+    | '/house-demolition'
+    | '/rubbish-removal'
+    | '/strip-out'
+    | '/thank-you'
+    | '/thank-you-house-demolition'
+    | '/thank-you-rubbish-removal'
+    | '/thank-you-strip-out'
+  id:
+    | '__root__'
+    | '/'
+    | '/house-demolition'
+    | '/rubbish-removal'
+    | '/strip-out'
+    | '/thank-you'
+    | '/thank-you-house-demolition'
+    | '/thank-you-rubbish-removal'
+    | '/thank-you-strip-out'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -67,6 +128,10 @@ export interface RootRouteChildren {
   HouseDemolitionRoute: typeof HouseDemolitionRoute
   RubbishRemovalRoute: typeof RubbishRemovalRoute
   StripOutRoute: typeof StripOutRoute
+  ThankYouRoute: typeof ThankYouRoute
+  ThankYouHouseDemolitionRoute: typeof ThankYouHouseDemolitionRoute
+  ThankYouRubbishRemovalRoute: typeof ThankYouRubbishRemovalRoute
+  ThankYouStripOutRoute: typeof ThankYouStripOutRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -99,6 +164,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof StripOutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/thank-you': {
+      id: '/thank-you'
+      path: '/thank-you'
+      fullPath: '/thank-you'
+      preLoaderRoute: typeof ThankYouRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/thank-you-house-demolition': {
+      id: '/thank-you-house-demolition'
+      path: '/thank-you-house-demolition'
+      fullPath: '/thank-you-house-demolition'
+      preLoaderRoute: typeof ThankYouHouseDemolitionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/thank-you-rubbish-removal': {
+      id: '/thank-you-rubbish-removal'
+      path: '/thank-you-rubbish-removal'
+      fullPath: '/thank-you-rubbish-removal'
+      preLoaderRoute: typeof ThankYouRubbishRemovalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/thank-you-strip-out': {
+      id: '/thank-you-strip-out'
+      path: '/thank-you-strip-out'
+      fullPath: '/thank-you-strip-out'
+      preLoaderRoute: typeof ThankYouStripOutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -107,6 +200,10 @@ const rootRouteChildren: RootRouteChildren = {
   HouseDemolitionRoute: HouseDemolitionRoute,
   RubbishRemovalRoute: RubbishRemovalRoute,
   StripOutRoute: StripOutRoute,
+  ThankYouRoute: ThankYouRoute,
+  ThankYouHouseDemolitionRoute: ThankYouHouseDemolitionRoute,
+  ThankYouRubbishRemovalRoute: ThankYouRubbishRemovalRoute,
+  ThankYouStripOutRoute: ThankYouStripOutRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
