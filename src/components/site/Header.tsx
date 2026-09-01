@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLenis } from "lenis/react";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { Phone } from "lucide-react";
 import logoDark from "@/assets/logo-dark.svg";
 import logoLight from "@/assets/logo-light.svg";
@@ -27,6 +28,8 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const lenis = useLenis();
   const { openQuote } = useQuoteModal();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const isThankYou = pathname.startsWith("/thank-you");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -34,6 +37,35 @@ export function Header() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  /* Thank-you pages sit on a light background and the visitor has already
+     converted. The overlay header (bone logo, transparent bar, quote CTA) is
+     wrong here: the light logo disappears and the CTA is redundant. Render a
+     solid light bar instead — dark logo + phone clearly visible, no CTA. */
+  if (isThankYou) {
+    return (
+      <header className="relative z-50 border-b border-border bg-background">
+        <div className="container-wide flex items-center justify-between gap-3 py-2.5 sm:gap-4 sm:py-3">
+          <Link to="/" aria-label="Demo Bros, home" className="block shrink-0">
+            <img
+              src={logoDark}
+              alt="Demo Bros"
+              className="h-14 w-auto sm:h-16 lg:h-20"
+              width={334}
+              height={330}
+            />
+          </Link>
+          <a
+            href={SITE.phoneHref}
+            className="flex items-center gap-2 text-sm font-semibold text-foreground transition-colors hover:text-primary"
+          >
+            <Phone className="h-4 w-4 shrink-0" />
+            <span>{SITE.phone}</span>
+          </a>
+        </div>
+      </header>
+    );
+  }
 
   return (
     /* The scrolled flag is published as a data attribute rather than branching
