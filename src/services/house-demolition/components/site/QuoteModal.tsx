@@ -1,3 +1,4 @@
+import { useRouterState } from "@tanstack/react-router";
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import type { ReactNode } from "react";
 import { createPortal } from "react-dom";
@@ -31,6 +32,13 @@ const QuoteModalContext = createContext<{ openQuote: () => void }>({ openQuote: 
 export function QuoteModalProvider({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
   const value = useMemo(() => ({ openQuote: () => setOpen(true) }), []);
+
+  // Close the modal on any route change — e.g. the redirect to the thank-you
+  // page after a successful submit — so it never sits on top of the next page.
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   return (
     <QuoteModalContext.Provider value={value}>
